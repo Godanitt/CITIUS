@@ -5,9 +5,11 @@ Este repositorio contiene los ejercicios, códigos fuente y recursos de mis prá
 
 ## Estructura del proyecto 
 
+```
 CITIUS
 ├── Apuntes
 |    ├── Apuntes.tex
 |    └── Bibliografia.bib
 |
 └── README.md
+```
