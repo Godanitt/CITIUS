@@ -7,7 +7,7 @@
 % BASE DE DOCUMENTO
 %----------------------------------------------------------------------------
 
-\LoadClass[11pt]{book}
+\LoadClass[12pt]{book}
 
 %----------------------------------------------------------------------------
 % PAQUETES BÁSICOS
@@ -29,6 +29,8 @@
 
 \RequirePackage{tikz}
 \RequirePackage[compat=1.1.0]{tikz-feynman}
+\RequirePackage[siunitx]{circuitikz}
+\usetikzlibrary{shapes.gates.logic.US, positioning, circuits, circuits.logic.US}
 
 \RequirePackage{subcaption}
 \RequirePackage{caption}
@@ -53,6 +55,7 @@
 \RequirePackage{minitoc} % para hacer tableofcontents de ejercicios
 \RequirePackage{slashed}
 \RequirePackage{multicol}
+
 %----------------------------------------------------------------------------
 % ÍNDICE PERSONALIZADO
 %----------------------------------------------------------------------------
@@ -173,7 +176,9 @@
 %----------------------------------------------------------------------------
 % GEOMETRÍA
 %----------------------------------------------------------------------------
-\geometry{a4paper, left=30mm, top=30mm, right=20mm, bottom=25mm}
+
+\geometry{a4paper,left=2cm,right=2cm,top=2.5cm,bottom=2.5cm}
+
 
 %----------------------------------------------------------------------------
 % SIUNITX CONFIGURACIÓN
@@ -270,13 +275,12 @@
 %----------------------------------------------------------------------------
 % HIPERVÍNCULOS
 %----------------------------------------------------------------------------
-\RequirePackage{hyperref}
-\RequirePackage{cleveref}
-\hypersetup{colorlinks=true, linkcolor=blue, citecolor=ForestGreen, urlcolor=BrickRed}
-\crefname{figure}{fig.}{figs.}
-\crefname{table}{tab.}{tabs.}
-\crefname{subsection}{subsec.}{subsecs.}
 
+\usepackage[colorlinks=true, linkcolor=Blue, citecolor=ForestGreen, urlcolor=BrickRed]{hyperref} % Crea las
+\usepackage[nameinlink]{cleveref}
+\crefname{figure}{Figura}{Figuras}
+\crefname{table}{Tabla}{Tablas}
+\crefname{subsection}{Apartado}{Apartados}
 %----------------------------------------------------------------------------
 % LISTINGS CONFIGURACIÓN
 %----------------------------------------------------------------------------

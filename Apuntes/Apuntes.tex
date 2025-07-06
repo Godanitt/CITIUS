@@ -1,16 +1,25 @@
 \documentclass{/home/daniel/GitHub/CITIUS/Apuntes/Template}
 \addbibresource{Blibiografia.bib} % si quieres incluir la bibliografía
+
+% Portada 
 \title{\Huge \textbf{Introducción a las FPGAs}}
 \author{\Large Daniel Vázquez Lago}
+
+% Documento
 \begin{document}
+\pagenumbering{Roman}
 \maketitle
 \tableofcontents
-\chapter{Introducción}
+\pagenumbering{arabic}
+\setlength{\parskip}{2.2mm} % Cambia el espacio entre párrafos
 
-\section{Introducción} 
+\input{Chapters/01-FPGA.tex}
+\input{Chapters/02-TecnologiaVLSI.tex}
+\input{Chapters/03-FPGA.tex}
 
-\subsection{Introducción}
 
 
-\chapter{FPGAs}
+
+
+
 \end{document}
