@@ -147,5 +147,33 @@ Se utilizan diversas tecnologías para programar las FPGA. Algunas FPGA se progr
 
 %El FPGA guarda un diseño como un “mapa” de cómo deben estar los switches, y al aplicarlo físicamente, transforma el chip genérico en un circuito específico que implementa tu lógica de manera real y operativa. Un FPGA no es solo una red de switches y LUTs: es un sistema completo de bloques lógicos, memorias, DSPs, interconexiones, interfaces de E/S y circuitería de gestión, todo integrable y configurable para implementar desde una simple puerta lógica hasta sistemas complejos como microcontroladores, procesadores, o procesadores de señal digital.
 
+\section{Lógica Combinacional y secuencial}
+Por un lado la \textbf{,ógica combinacional:}
+\begin{itemize}
+  \item La salida depende únicamente de las entradas actuales.
+  \item No existe memoria: el circuito no recuerda estados pasados.
+  \item Ejemplos: puertas lógicas, multiplexores, decodificadores, sumadores combinacionales.
+\end{itemize}
+
+\[
+\text{Salida}(t) = f(\text{Entradas}(t))
+\]
+por otro lado la \textbf{lógica secuencial:}
+\begin{itemize}
+  \item La salida depende de las entradas actuales y del estado anterior del sistema.
+  \item Utiliza elementos de almacenamiento como flip-flops o latches.
+  \item Ejemplos: contadores, registros, máquinas de estados, sistemas de control.
+\end{itemize}
+
+\[
+\text{Estado}(t+1) = f(\text{Entradas}(t), \text{Estado}(t))
+\]
+\[
+\text{Salida}(t) = g(\text{Entradas}(t), \text{Estado}(t))
+\]
+
+La diferncia esencial es entonces que la lógica combinacional no tiene memoria; la lógica secuencial sí, permitiendo que el comportamiento del circuito dependa del tiempo y del historial de entradas.
+
+La \textbf{lógica combinacional} se utiliza para operaciones que requieren procesar las entradas únicamente en el momento actual, sin necesidad de memoria. Es ideal para construir sumadores, restadores, multiplexores, comparadores, decodificadores y en general cualquier circuito que realice una operación aritmética o lógica de manera instantánea. Por ejemplo, se usa para procesar datos en una unidad aritmético-lógica (ALU), decidir rutas en un multiplexor o traducir direcciones en un decodificador. La \textbf{lógica secuencial} se emplea cuando es necesario que el circuito recuerde información, es decir, cuando su comportamiento depende del historial de entradas (los estados anteriores). Se utiliza en contadores para llevar la cuenta de eventos, registros para almacenar datos temporalmente, máquinas de estados para implementar protocolos de comunicación, controladores secuenciales como los de microprocesadores, y pipelines para procesar varias etapas de datos de manera sincronizada. Ejemplos de su uso incluyen cronómetros digitales, controladores de robots, memorias intermedias FIFO y la ejecución paso a paso de instrucciones en un procesador.
 
 

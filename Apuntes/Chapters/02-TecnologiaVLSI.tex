@@ -1,4 +1,4 @@
-\chapter{Tecnología VLSI}
+ \chapter{Tecnología VLSI}
 
 Mientras que el diseño tradicional de los sistemas VLSI (Very Large Scale Integration) tiene sus días contados, el diseño a través de las FPGAs está en auge. Sin embargo, los diseñadores de grandes sistemas FPGA necesitan entender los fundamentos de VLSI para sacar el máximo rendimiento a los FPGAs. La arquitectura de los FPGAs está determinada completamente por las restricciones que imponen los VLSI: estructuras de elementos lógicos, estructuras de interconexión programables, redes de interconexión, configuración, distribución de pines. Entender como las características de los dispositivos VLSI afectan a las estructura FPGA pemitirá al diseñador entender cuales son las mayores ventajas de los FPGAs y minimizar la influencia de sus limitaciones. 
 
@@ -159,4 +159,29 @@ El funcionamiento del latch es sencillo. Cuando el transistor de transmisión es
 
 La estructura de un flip-flop activado por flanco se muestra en la \cref{Fig:02-FlipFlop}. Se construye a partir de dos latches conectados en cascada. El primer latch lee la entrada de datos cuando el reloj está en alto. Mientras tanto, el inversor interno asegura que la entrada de reloj del segundo latch esté en bajo, aislando al segundo latch de los cambios en la salida del primer latch y manteniendo estable el valor de salida del flip-flop. Después de que el reloj pasa a nivel bajo, la entrada de reloj del segundo latch queda en alto, haciéndolo transparente, pero el primer latch presenta un valor estable al segundo latch. Cuando el reloj vuelve de 0 a 1, el segundo latch guarda su valor antes de que la salida del primer latch tenga oportunidad de cambiar.
 
+\subsection{Memoria de Acesso Aleatorio (RAM)}
+
+La \textbf{memoria de acesso aleatorio} (RAM, \textit{Random Acess Memory}) se suele usar en FPGAs debido a que estos implementan grandes bloques de memoria. Las FPGAs usan RAM estáticas (SRAM) porque la memoria RAM dinámica comunmente se usa para \textit{bulk memory}\footnote{Bulk memory se refiere a una memoria de gran capacidad que se usa principalmente para almacenar grandes cantidades de datos, como tablas, imágenes, buffers, programas o conjuntos de datos.} requiere que el capacitor esté espacializado en estructuras que no pueden ser construidos en chips con transistores lógicos de altas capacidades. 
+
+
+
+\subsubsection{SRAM}
+Una memoria \textbf{SRAM} (\emph{Static Random-Access Memory}) es un tipo de memoria de acceso aleatorio en la que cada bit de información se almacena mediante un biestable o \textit{latches}, es decir, un circuito formado típicamente por seis transistores (en tecnología CMOS) que mantiene su estado mientras se le suministre energía. El almacenamiento de datos se realiza de manera estable gracias a la retroalimentación positiva de los biestables. Por este motivo, las SRAM ofrecen tiempos de acceso más rápidos que las DRAM.
+
+En la \cref{Fig:02-SRAM} mostramos el núcleo principal de una SRAM. El valor se guarda en medio de los 4 transitores, que forma un par de inversores conectados en un loop. Los otros dos transitores controlan el acesso a las {celdas de memoria} \footnote{Es la unidad básica de almacenamiento en una memoria; cada celda guarda un solo bit (0 o 1)}. a través de las \textit{bit lines} (lineas de bit\footnote{Son los conductores verticales en una matriz de memoria que se usan para leer y escribir los datos de las celdas de memoria; cada bit line conecta una columna de celdas}).  Cuando select = 0, los inversores se refuerzan mutuamente para almacenar el valor. La lectura o escritura se realiza cuando la celda está seleccionada:
+
+
+\begin{itemize}
+    \item Para leer, las líneas bit y bit’ se precargan a $V_{DD}$ (5V) antes de que la línea de selección se active (se ponga en alto). Uno de los inversores de la celda tendrá su salida en 1 y el otro en 0; cuál de los dos está en 1 depende del valor almacenado. Por ejemplo, si la salida del inversor de la derecha es 0, la línea bit’ se descargará a $V_{SS}$ (0V) a través del transistor de bajada (pulldown) de ese inversor y la línea bit permanecerá alta. Si el valor opuesto está almacenado en la celda, la línea bit se llevará a nivel bajo mientras que bit’ permanecerá alta.
+    \item Para escribir, las líneas bit y bit’ se configuran con los valores deseados, y luego se pone select en 1. El intercambio de carga (charge sharing) fuerza a los inversores a cambiar de valor, si es necesario, para almacenar el valor deseado. Las líneas de bit tienen una capacitancia mucho mayor que los inversores, por lo que la carga en las líneas de bit es suficiente para dominar al par de inversores y hacer que cambien de estado.
+
+\end{itemize}
+
+\begin{figure}[H] \centering
+    \includegraphics[width=0.6\linewidth]{Imagenes/02-Sram.png}
+    \caption{Diseño del núcleo principal de una SRAM.}
+    \label{Fig:02-SRAM}    
+\end{figure}
+
+\subsubsection{}
 

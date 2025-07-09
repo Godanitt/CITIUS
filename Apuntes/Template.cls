@@ -281,6 +281,8 @@
 \crefname{figure}{Figura}{Figuras}
 \crefname{table}{Tabla}{Tablas}
 \crefname{subsection}{Apartado}{Apartados}
+\crefname{section}{Seccion}{Secciones}
+\crefname{appendix}{Apéndice}{Apendices}
 %----------------------------------------------------------------------------
 % LISTINGS CONFIGURACIÓN
 %----------------------------------------------------------------------------
