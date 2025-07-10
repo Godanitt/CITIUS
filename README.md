@@ -10,7 +10,23 @@ CITIUS
 ├── Apuntes
 |    ├── Apuntes.tex
 |    ├── Template.cls
-|    └── Bibliografia.bib
+|    ├── Bibliografia.bib
+|    ├── Cuerpo 
+|    |     ├── 01-FPGA.tex
+|    |     ├── 02-TecnologiaVLSI.tex
+|    |     ├── 03-FPGA.tex
+|    |     ├──
+|    |     └── 
+|    ├── Imagenes
+|    └── Plots 
 |
+├── LTspice
+|    ├── Nmos
+|    └── Inversor
+|
+├── Libros
+|   
+├── .gitignore
+├── .vscode 
 └── README.md
 ```

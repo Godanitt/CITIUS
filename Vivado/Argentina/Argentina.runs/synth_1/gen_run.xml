@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1752048181">
-  <File Type="VDS-TIMINGSUMMARY" Name="Argentina_timing_summary_synth.rpt"/>
   <File Type="RDS-DCP" Name="Argentina.dcp"/>
-  <File Type="RDS-UTIL-PB" Name="Argentina_utilization_synth.pb"/>
-  <File Type="RDS-UTIL" Name="Argentina_utilization_synth.rpt"/>
-  <File Type="RDS-PROPCONSTRS" Name="Argentina_drc_synth.rpt"/>
   <File Type="RDS-RDS" Name="Argentina.vds"/>
   <File Type="REPORTS-TCL" Name="Argentina_reports.tcl"/>
-  <File Type="VDS-TIMING-PB" Name="Argentina_timing_summary_synth.pb"/>
   <File Type="PA-TCL" Name="Argentina.tcl"/>
+  <File Type="RDS-UTIL" Name="Argentina_utilization_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="Argentina_utilization_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/new/Argentina.vhd">
@@ -42,9 +39,7 @@
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2024">
-      <Desc>Vivado Synthesis Defaults</Desc>
-    </StratHandle>
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2024"/>
     <Step Id="synth_design"/>
   </Strategy>
 </GenRun>
