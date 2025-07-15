@@ -15,7 +15,8 @@ CITIUS
 |    |     ├── 01-FPGA.tex
 |    |     ├── 02-TecnologiaVLSI.tex
 |    |     ├── 03-FPGA.tex
-|    |     ├──
+|    |     ├── 04-VHDL.tex
+|    |     ├── 05-Vivado.tex
 |    |     └── 
 |    ├── Imagenes
 |    └── Plots 
@@ -26,10 +27,10 @@ CITIUS
 |
 ├── Vivado
 |    ├── Argentina (Prueba 01)
-|    └── 
+|    └── Mux4 
 |
 |
-|
+|      
 |
 ├── Libros
 |   

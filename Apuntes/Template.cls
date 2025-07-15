@@ -31,10 +31,11 @@
 \RequirePackage[compat=1.1.0]{tikz-feynman}
 \RequirePackage[siunitx]{circuitikz}
 \usetikzlibrary{shapes.gates.logic.US, positioning, circuits, circuits.logic.US}
+\RequirePackage{pgfplots}
+\pgfplotsset{compat=1.18}
 
 \RequirePackage{subcaption}
 \RequirePackage{caption}
-\RequirePackage{pgfplots} % Para controlar la perspectiva
 \RequirePackage{siunitx}
 \RequirePackage{extramarks} % Para poder usar firstleftmarks
 \RequirePackage[version=4]{mhchem} % Para poder usar formulas de reacciones nucleares
@@ -78,7 +79,7 @@
 %----------------------------------------------------------------------------
 % CAPTIONS
 %----------------------------------------------------------------------------
-\captionsetup{font=small, justification=centering, skip=6pt, labelfont={bf,small}, textfont={small}}
+\captionsetup{font=small, justification=justified, skip=6pt, labelfont={bf,small}, textfont={small}}
 
 %----------------------------------------------------------------------------
 % CONFIGURACIÓN DE Minitoc
@@ -119,6 +120,16 @@
 % ----------------------------------------------------------------------------
 
 \newtcolorbox{Enunciado}{
+  colback=Gray!40,    % Color de fondo
+  colframe=Gray!40,   % Color del borde
+  sharp corners,      % Esquinas cuadradas
+  boxrule=0pt,        % Grosor del borde (0pt para que desaparezca)
+  left=5pt,           % Margen izquierdo interno
+  right=5pt,          % Margen derecho interno
+  top=5pt,            % Margen superior interno
+  bottom=5pt          % Margen inferior interno
+}
+\newtcolorbox{Ejemplo}{
   colback=Gray!40,    % Color de fondo
   colframe=Gray!40,   % Color del borde
   sharp corners,      % Esquinas cuadradas
@@ -170,7 +181,7 @@
 % CONFIGURACIÓN DE BIBLATEX
 % ----------------------------------------------------------------------------
 
-\usepackage{biblatex} %Imports biblatex packag
+\usepackage[backend=biber]{biblatex} %Imports biblatex packag
 
 
 %----------------------------------------------------------------------------
@@ -298,7 +309,7 @@
   frame=single,
   keepspaces=true,
   keywordstyle=\color{blue},
-  language=Python,
+  language=VHDL,
   numbers=left,
   numbersep=5pt,
   numberstyle=\tiny\color{mygray},

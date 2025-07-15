@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2024.2 (lin64) Build 5239630 Fri Nov 08 22:34:34 MST 2024
-| Date         : Wed Jul  9 10:04:09 2025
+| Date         : Mon Jul 14 11:18:08 2025
 | Host         : daniel-NBLB-WAX9N running 64-bit Ubuntu 24.04.2 LTS
 | Command      : report_utilization -file Argentina_utilization_placed.rpt -pb Argentina_utilization_placed.pb
 | Design       : Argentina

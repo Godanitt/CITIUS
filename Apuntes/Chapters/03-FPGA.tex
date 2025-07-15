@@ -10,14 +10,14 @@ Las FPGAs están formadas por 3 tipos de elementos princiaples:
     \item Piones I/O (\textit{In}/\textit{Out})
 \end{itemize}
 \begin{figure}[H] \centering
-    \includegraphics[width=0.6\linewidth]{Imagenes/03-FPGA_Fabrics.png} 
+    \includegraphics[width=0.6\linewidth]{Imagenes/03/03-FPGA_Fabrics.png} 
     \caption{Estructura genérica de la FPGA.}   
     \label{Fig:03-FPGA_Fabric}
 \end{figure}
 Estos tres elementos se combinan como puede verse en la \cref{Fig:03-FPGA_Fabric}, en los que los pines interaccionan con los elementos de lógica combinacional a través de las interconexiones. La lógica combinacional está dividida en unidades pequeñas, conocidas como \textbf{elementos de lógica} (LEs, \textit{logic elements}) o \textbf{bloques de lógica combinacional} (CLBs, \textit{combinational logic blocks}). Los LE o CLB pueden llegar a actura como las típicas puertas lógicas, claro que con na potencia mucho menor que la que podríamos encontrar en un bloque lógico combinacional encontrados en diseños grandes. Las interaconexiones se encuentran entre los elementos lógicos, y se programan (se selque tieneneccionan cuales están activas y cuales no). La interconexión suele estar organizada en canales u otras unidades. Los FPGAs normalmente ofrecen diferentes tipso de interconexiones dependiendo de la distancia entre los elementos lógicos combinacionales que tienen que conectarse. Las señales de reloj también son transportadas a través de su propia red de interconexión. Los pines I/O se llaman en general \textbf{bloques I/O} (IOBs). Estos también son programables, seleccionando si queremos que sean \textit{inputs} o \textit{ouputs}, y a veces cumplen objetivos tales como conexiones de baja potencia o alta velocidad. 
 
 \begin{figure}[H] \centering
-    \includegraphics[width=0.6\linewidth]{Imagenes/03-FPGA_Interconexion.png} 
+    \includegraphics[width=0.6\linewidth]{Imagenes/03/03-FPGA_Interconexion.png} 
     \caption{Estructura genérica de la FPGA.}   
     \label{Fig:03-FPGA_Interconexion}
 \end{figure}
@@ -48,7 +48,7 @@ Los FPGAs con memoria estática es uno de los más usados.
 El método básico utilizado para construir un \textbf{bloque de lógica combinacional} (CLB), también llamado \textbf{elemento lógico} (LE), en un FPGA basado en SRAM es la \textbf{tabla de búsqueda} (LUT), cuyo esquema se puede ver en la \cref{Fig:03-LUT}. La tabla de búsqueda es una SRAM que se usa para implementar una tabla de verdad. Cada dirección en la SRAM representa una combinación de entradas del elemento lógico. El valor almacenado en esa dirección representa el valor de la función para esa combinación de entradas de n variables. Una función de n entradas requiere una SRAM con $2^n$ posiciones. Dado que una SRAM básica no está sincronizada con un reloj, la tabla de búsqueda (LE) opera como cualquier otra puerta lógica: a medida que cambian sus entradas, su salida cambia tras un cierto retraso.
 
 \begin{figure}[H] \centering
-    \includegraphics[width=0.6\linewidth]{Imagenes/03-LUT.png}
+    \includegraphics[width=0.6\linewidth]{Imagenes/03/03-LUT.png}
     \caption{esquema de una tabla de búsqueda (LUT).}
     \label{Fig:03-LUT}
 \end{figure}
@@ -91,25 +91,25 @@ Los ejemplos siguientes describen los elementos lógicos en dos FPGAs. Estos eje
 
 \vspace*{1em}
 
-\begin{Enunciado}
+\begin{Ejemplo}
 \subsection*{Ejemplo 3.1: Elementos lógicos Xlinx Spartan-II}
-\end{Enunciado}
+\end{Ejemplo}
 
 En la \cref{Fig:03-Xilinx-Spartan-II} vemos el bloque lógico combinacional Xilinx Spartan II. Una slice incluye dos celdas lógicas (LCs). La base de una celda lógica es el par de tablas de búsqueda de cuatro bits. Sus entradas son F1-F4 y G1-G4. Cada tabla de búsqueda también puede usarse como una memoria RAM síncrona de 16 bits o como un registro de desplazamiento de 16 bits. Cada \textit{slice}\footnote{Un slice es como un mini-bloque lógico que puedes programar para implementar una pequeña parte de tu diseño: una puerta lógica, un bit de un registro, una parte de un sumador, etc.}  (LUTs, flip-flops..) también contiene lógica de acarreo para cada LUT, de modo que se puedan realizar sumas. Un acarreo de entrada al slice ingresa por la entrada CIN, pasa a través de los dos bits de la cadena de acarreo, y sale por COUT. La lógica aritmética también incluye una puerta XOR. Para construir un sumador, la puerta XOR se usa para generar la suma y la LUT se usa para el cálculo del acarreo. Cada slice incluye un multiplexor que se utiliza para combinar los resultados de los dos generadores de funciones en un slice. Otro multiplexor combina las salidas de los multiplexores en los dos slices, generando un resultado para todo el CLB.
 
 Los registros pueden configurarse como flip-flops tipo D o como latches. Cada registro tiene señales de reloj y habilitación de reloj. Cada CLB también contiene dos drivers de tres estados (conocidos como BUFTs) que pueden usarse para manejar buses internos del chip.
 
 \begin{figure}[H] \centering
-    \includegraphics[width=0.6\linewidth]{Imagenes/03-Xilinx_Spartan_II.png}
+    \includegraphics[width=0.6\linewidth]{Imagenes/03/03-Xilinx_Spartan_II.png}
     \caption{Elementos lógicos Xilinx Spartan II}%\cite{FPGA-WolfWayne}.}
     \label{Fig:03-Xilinx-Spartan-II}
 \end{figure}
 
 \vspace*{1em}
 
-\begin{Enunciado}
+\begin{Ejemplo}
 \subsection*{Ejemplo 3.2: Elementos lógicos Altera APEX II}
-\end{Enunciado}
+\end{Ejemplo}
 
 
 \subsection{Redes interconectadas}

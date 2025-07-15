@@ -8,9 +8,9 @@
 # 
 
 if [ -z "$PATH" ]; then
-  PATH=/home/daniel/Vivado/Vitis/2024.2/bin:/home/daniel/Vivado/Vivado/2024.2/ids_lite/ISE/bin/lin64:/home/daniel/Vivado/Vivado/2024.2/bin
+  PATH=/home/daniel/Xilinx/Vitis/2024.2/bin:/home/daniel/Xilinx/Vivado/2024.2/ids_lite/ISE/bin/lin64:/home/daniel/Xilinx/Vivado/2024.2/bin
 else
-  PATH=/home/daniel/Vivado/Vitis/2024.2/bin:/home/daniel/Vivado/Vivado/2024.2/ids_lite/ISE/bin/lin64:/home/daniel/Vivado/Vivado/2024.2/bin:$PATH
+  PATH=/home/daniel/Xilinx/Vitis/2024.2/bin:/home/daniel/Xilinx/Vivado/2024.2/ids_lite/ISE/bin/lin64:/home/daniel/Xilinx/Vivado/2024.2/bin:$PATH
 fi
 export PATH
 
@@ -38,7 +38,7 @@ EAStep()
 }
 
 # pre-commands:
-/bin/touch .init_design.begin.rst
+/bin/touch .write_bitstream.begin.rst
 EAStep vivado -log Argentina.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source Argentina.tcl -notrace
 
 

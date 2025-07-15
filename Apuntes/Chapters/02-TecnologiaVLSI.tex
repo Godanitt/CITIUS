@@ -8,7 +8,15 @@ En este capítulo nos centtaremos en entender los VLSI: fabricación, circuiteri
 
 \section{Procesos de manufactura}
 
+\lipsum[1]
+
+\lipsum[1]
+
 \section{Características de los transistores}
+
+\lipsum[1]
+
+\lipsum[1]
 
 \section{Puertas Lógicas CMOS}
 
@@ -22,17 +30,44 @@ La estructura básica de una puerta CMOS está basa en las \textbf{puertas está
 
 Está divida en la \textbf{\textit{red pullup}} y \textbf{\textit{red pulldown}}, hechas de transistores tipo-p y tipo-n. La salida de la puerta puede ser conectadas al potencial $V_{DD}$ (\textit{Voltaje Drain to Drain}, normalmente 5 V o el 1 lógico) o al potencial $V_{SS}$ (\textit{Voltaje Source to Source}, normalmente 0 V o el 0 lógico). Las dos redes deben ser complementarias para que podamos obtener una salida no indeterminada, y para que además no exista ningún caso de que la salida esté conectada a ambas a la vez. Veamos algunos ejemplos. 
 
-\subsubsection{Esquema para inversor}
+\begin{Ejemplo}
+    \subsubsection*{Ejemplo 2.1: inversor}
+\end{Ejemplo}
 
 \begin{minipage}{0.65\linewidth}
-El esquema para el inversor es extremadamente sencillo pero extremadamente ilustrativo. En este caso la entrada $a$, que puede tener un valor de 1 (volatje 5 V, +) o un valor de 0 (voltaje 0 V, triangular) se conecta a la base del transistor NMOS y PMOS. Como hemos dicho, estos funcionan como interruptores perfectos, pero complementarios. El detector NMOS (abajo) dejará estará encedido (deja pasar corriente) cuando reciba un voltaje positivo (respecto la entrada), es decir, cuando reciba un \textit{input} 1, mientras que el PMOS (arriba) cuando recibe un voltaje negativo (\textit{input} 0). Dado que el NMos está conectado con el $V_{SS}$ (\textit{output} 0), cuando reciba el 1 saldrá el \textit{output} 0, e viceversa cuando se conecte el PMos. 
+El esquema para el inversor es extremadamente sencillo pero extremadamente ilustrativo. En este caso la entrada $a$, que puede tener un valor de 1 (volatje 5 V, +) o un valor de 0 (voltaje 0 V, triangular) se conecta a la base del transistor NMOS y PMOS. Como hemos dicho, estos funcionan como interruptores perfectos, pero complementarios. El detector NMOS (abajo) dejará estará encedido (deja pasar corriente) cuando reciba un voltaje positivo (respecto la entrada), es decir, cuando reciba un \textit{input} 1, mientras que el PMOS (arriba) cuando recibe un voltaje negativo (\textit{input} 0). Dado que el NMos está conectado con el $V_{SS}$ (\textit{output} 0), cuando reciba el 1 saldrá el \textit{output} 0, e viceversa cuando se conecte el PMos. En la figura \cref{Fig:02-InversorV} vemos el voltaje de salida frente al de entrada.
 \end{minipage}
 \hfill
 \begin{minipage}{0.32\linewidth} \centering
-    \includegraphics[width=0.5\linewidth]{Imagenes/02-Inversor.png}
+    \includegraphics[width=1\linewidth]{Imagenes/02/02-InversorDiseñado.png}
     \captionof{figure}{Esquema del inversor con nMOS y pMOS.}
     \label{Fig:02-Inversora}
 \end{minipage}
+
+
+\begin{figure}[H] \centering
+\begin{tikzpicture}
+\begin{axis}[
+    xlabel={$V_{in}$ [V]},
+    ylabel={$V_{out}$ [V]},
+    grid=both,
+    title={Respuesta del inversor},
+    legend pos=south west,
+    width=12cm,
+    height=8cm,
+]
+\addplot[
+    color=blue,
+    mark=*,
+] table [x=V2, y={V(n002)}, col sep=space] {/home/daniel/GitHub/CITIUS/LTspice/Inversor/Inversor_V.txt};
+\addlegendentry{$V_{in}$ vs $V_{out}$}
+\end{axis}
+\end{tikzpicture}
+\caption{Representación gráfica del voltaje de salida para \cref{Fig:02-Inversora} frente al voltaje de entrada, donde vemos claramente que con el 0 lógico de entrada (0 V) tenemos el 1 de salida (5 V); y que con el 1 de entrada (5 V) tenemos el 0 de salida (0 V).}
+\label{Fig:02-InversorV}
+\end{figure}
+
+
 
 \subsection{Retardo de la Puerta Lógica}
 
@@ -43,7 +78,7 @@ Cuando entra un voltaje entre $V_H$ y $V_{DD}$ estamos efectivamente en el 1 ló
 El retardo que tenga una puerta lógica se puede modelar en el esquema con una resistencia y un condensador en serie (un RC) como en la \cref{Fig:02-Inversora_RC}, aunque en la realidad tenga un forma mucho más compleja.
 
 \begin{figure}[H] \centering
-    \includegraphics[width=0.7\linewidth]{Imagenes/02-Inversor_2.png}    
+    \includegraphics[width=0.7\linewidth]{Imagenes/02/02-Inversor_2.png}    
     \caption{modelización del retardo de puerta lógica inversora.}
     \label{Fig:02-Inversora_RC}
 \end{figure}
@@ -96,7 +131,7 @@ La señal a en la parte superior indica la señal de control: cuando a está act
 Cuando a está en nivel alto (a=1), el interruptor cierra el contacto, permitiendo que la señal de la línea izquierda pase a la derecha y viceversa. Es decir, el interruptor está conduciendo. Cuando a está en nivel bajo (a=0), el interruptor se abre, aislando eléctricamente ambos lados; las señales no pueden pasar.
 
 \begin{figure}[H] \centering
-    \includegraphics[width=0.3\linewidth]{Imagenes/02-Switch}
+    \includegraphics[width=0.3\linewidth]{Imagenes/02/02-Switch}
     \caption{Puerta de trasmisión complementaria.}
     \label{Fig:02-switch}
 \end{figure}
@@ -138,7 +173,7 @@ La salida de un latch sigue su entrada mientras la entrada de reloj del latch es
 El registro más simple de CMOS consiste en una \textbf{\textit{latch dinámica}}. Dinámica porque su valor de memoria no es refrescada por la fuente de alimentación y \textit{latch} porque su salida sigue a su entrada bajo algunas condiciones.  
 
 \begin{figure}[H] \centering
-    \includegraphics[width=0.7\linewidth]{Imagenes/02-LatchDinamica.png}
+    \includegraphics[width=0.7\linewidth]{Imagenes/02/02-LatchDinamica.png}
     \caption{un esquema de la latch-dinámica.}
     \label{Fig:02-LatchDinamica}
 \end{figure}
@@ -152,7 +187,7 @@ La entrada es D en un latch tipo D, por lo que su salida es Q’. El inversor co
 El funcionamiento del latch es sencillo. Cuando el transistor de transmisión está encendido, cualquier puerta lógica conectada a la entrada D puede cargar o descargar $C_g$. A medida que el voltaje en $C_g$ cambia, Q’ sigue ese cambio de forma complementaria: cuando $C_g$ se lleva a voltajes bajos, Q’ sube a voltajes altos, y viceversa. Cuando el transistor de transmisión se abre, $C_g$ queda desconectado de cualquier puerta lógica que pudiera cambiar su valor. Por lo tanto, el valor de la salida Q’ del latch depende del voltaje del condensador de almacenamiento: si el condensador se ha descargado, la salida del latch será un 1 lógico; si el condensador se ha cargado, la salida del latch será un 0 lógico. Es importante notar que el valor de Q’ es el complemento lógico del valor presentado al latch en D; debemos tener en cuenta esta inversión al usar el latch. Para cambiar el valor almacenado en el latch, podemos cerrar el transistor de transmisión estableciendo $\phi = 1$ y $\phi’ = 0$, y luego cambiar el voltaje en $C_g$.
 
 \begin{figure}[H] \centering
-    \includegraphics[width=0.6\linewidth]{Imagenes/02-FlipFlop.png}
+    \includegraphics[width=0.6\linewidth]{Imagenes/02/02-FlipFlop.png}
     \caption{un flip-flop hecho de latches.}
     \label{Fig:02-FlipFlop}
 \end{figure}
@@ -178,7 +213,7 @@ En la \cref{Fig:02-SRAM} mostramos el núcleo principal de una SRAM. El valor se
 \end{itemize}
 
 \begin{figure}[H] \centering
-    \includegraphics[width=0.6\linewidth]{Imagenes/02-Sram.png}
+    \includegraphics[width=0.6\linewidth]{Imagenes/02/02-Sram.png}
     \caption{Diseño del núcleo principal de una SRAM.}
     \label{Fig:02-SRAM}    
 \end{figure}

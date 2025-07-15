@@ -3,8 +3,8 @@
 # SW Build 5239630 on Fri Nov 08 22:34:34 MST 2024
 # IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
 # SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
-# Start of session at: Wed Jul  9 10:03:04 2025
-# Process ID         : 42989
+# Start of session at: Mon Jul 14 11:16:19 2025
+# Process ID         : 5725
 # Current directory  : /home/daniel/GitHub/CITIUS/Vivado/Argentina/Argentina.runs/synth_1
 # Command line       : vivado -log Argentina.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source Argentina.tcl
 # Log file           : /home/daniel/GitHub/CITIUS/Vivado/Argentina/Argentina.runs/synth_1/Argentina.vds
@@ -13,12 +13,12 @@
 # Platform           : Ubuntu
 # Operating System   : Ubuntu 24.04.2 LTS
 # Processor Detail   : AMD Ryzen 7 4800H with Radeon Graphics
-# CPU Frequency      : 1906.931 MHz
+# CPU Frequency      : 1669.639 MHz
 # CPU Physical cores : 8
 # CPU Logical cores  : 16
 # Host memory        : 16100 MB
 # Swap memory        : 2147 MB
 # Total Virtual      : 18247 MB
-# Available Virtual  : 9492 MB
+# Available Virtual  : 14199 MB
 #-----------------------------------------------------------
 source Argentina.tcl -notrace

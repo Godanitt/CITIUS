@@ -8,9 +8,9 @@
 # 
 
 if [ -z "$PATH" ]; then
-  PATH=/home/daniel/Vivado/Vitis/2024.2/bin:/home/daniel/Vivado/Vivado/2024.2/ids_lite/ISE/bin/lin64:/home/daniel/Vivado/Vivado/2024.2/bin
+  PATH=/home/daniel/Xilinx/Vitis/2024.2/bin:/home/daniel/Xilinx/Vivado/2024.2/ids_lite/ISE/bin/lin64:/home/daniel/Xilinx/Vivado/2024.2/bin
 else
-  PATH=/home/daniel/Vivado/Vitis/2024.2/bin:/home/daniel/Vivado/Vivado/2024.2/ids_lite/ISE/bin/lin64:/home/daniel/Vivado/Vivado/2024.2/bin:$PATH
+  PATH=/home/daniel/Xilinx/Vitis/2024.2/bin:/home/daniel/Xilinx/Vivado/2024.2/ids_lite/ISE/bin/lin64:/home/daniel/Xilinx/Vivado/2024.2/bin:$PATH
 fi
 export PATH
 
