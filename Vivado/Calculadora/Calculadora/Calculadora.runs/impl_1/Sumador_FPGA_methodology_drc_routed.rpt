@@ -1,0 +1,81 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2 (lin64) Build 5239630 Fri Nov 08 22:34:34 MST 2024
+| Date         : Wed Jul 16 11:23:58 2025
+| Host         : daniel-NBLB-WAX9N running 64-bit Ubuntu 24.04.2 LTS
+| Command      : report_methodology -file Sumador_FPGA_methodology_drc_routed.rpt -pb Sumador_FPGA_methodology_drc_routed.pb -rpx Sumador_FPGA_methodology_drc_routed.rpx
+| Design       : Sumador_FPGA
+| Device       : xc7a100tcsg324-1
+| Speed File   : -1
+| Design State : Fully Routed
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Report Methodology
+
+Table of Contents
+-----------------
+1. REPORT SUMMARY
+2. REPORT DETAILS
+
+1. REPORT SUMMARY
+-----------------
+            Netlist: netlist
+          Floorplan: design_1
+      Design limits: <entire design considered>
+             Max checks: <unlimited>
+             Checks found: 9
++-----------+----------+--------------------------------+--------+
+| Rule      | Severity | Description                    | Checks |
++-----------+----------+--------------------------------+--------+
+| TIMING-20 | Warning  | Non-clocked latch              | 8      |
+| LATCH-1   | Advisory | Existing latches in the design | 1      |
++-----------+----------+--------------------------------+--------+
+
+2. REPORT DETAILS
+-----------------
+TIMING-20#1 Warning
+Non-clocked latch  
+The latch A_reg cannot be properly analyzed as its control pin A_reg/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#2 Warning
+Non-clocked latch  
+The latch B_reg cannot be properly analyzed as its control pin B_reg/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#3 Warning
+Non-clocked latch  
+The latch C_reg cannot be properly analyzed as its control pin C_reg/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#4 Warning
+Non-clocked latch  
+The latch D_reg cannot be properly analyzed as its control pin D_reg/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#5 Warning
+Non-clocked latch  
+The latch E_reg cannot be properly analyzed as its control pin E_reg/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#6 Warning
+Non-clocked latch  
+The latch F_reg cannot be properly analyzed as its control pin F_reg/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#7 Warning
+Non-clocked latch  
+The latch G_reg cannot be properly analyzed as its control pin G_reg/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#8 Warning
+Non-clocked latch  
+The latch H_reg cannot be properly analyzed as its control pin H_reg/G is not reached by a timing clock
+Related violations: <none>
+
+LATCH-1#1 Advisory
+Existing latches in the design  
+There are 8 latches found in the design. Inferred latches are often the result of HDL coding mistakes, such as incomplete if or case statements.
+Related violations: <none>
+
+

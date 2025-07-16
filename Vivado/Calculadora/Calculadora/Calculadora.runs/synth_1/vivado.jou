@@ -1,0 +1,24 @@
+#-----------------------------------------------------------
+# Vivado v2024.2 (64-bit)
+# SW Build 5239630 on Fri Nov 08 22:34:34 MST 2024
+# IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
+# SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
+# Start of session at: Wed Jul 16 11:22:28 2025
+# Process ID         : 35003
+# Current directory  : /home/daniel/GitHub/CITIUS/Vivado/Calculadora/Calculadora/Calculadora.runs/synth_1
+# Command line       : vivado -log Sumador_FPGA.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source Sumador_FPGA.tcl
+# Log file           : /home/daniel/GitHub/CITIUS/Vivado/Calculadora/Calculadora/Calculadora.runs/synth_1/Sumador_FPGA.vds
+# Journal file       : /home/daniel/GitHub/CITIUS/Vivado/Calculadora/Calculadora/Calculadora.runs/synth_1/vivado.jou
+# Running On         : daniel-NBLB-WAX9N
+# Platform           : Ubuntu
+# Operating System   : Ubuntu 24.04.2 LTS
+# Processor Detail   : AMD Ryzen 7 4800H with Radeon Graphics
+# CPU Frequency      : 1400.000 MHz
+# CPU Physical cores : 8
+# CPU Logical cores  : 16
+# Host memory        : 16100 MB
+# Swap memory        : 2147 MB
+# Total Virtual      : 18247 MB
+# Available Virtual  : 11352 MB
+#-----------------------------------------------------------
+source Sumador_FPGA.tcl -notrace
