@@ -37,11 +37,28 @@ entity Sumador_FPGA is
            sw2 : in STD_LOGIC;
            sw3 : in STD_LOGIC;
            btn0 : in STD_LOGIC; 
+           btn1 : in STD_LOGIC; 
            clk   : in STD_LOGIC;
+           
            led0 : out STD_LOGIC;
            led1 : out STD_LOGIC;
            led2 : out STD_LOGIC;
-           led3 : out STD_LOGIC
+           led3 : out STD_LOGIC;
+           
+           led0b : out STD_LOGIC;
+           led1b : out STD_LOGIC;
+           led2b : out STD_LOGIC;
+           led3b : out STD_LOGIC;
+           
+           led0r : out STD_LOGIC;
+           led1r : out STD_LOGIC;
+           led2r : out STD_LOGIC;
+           led3r : out STD_LOGIC;
+           
+           led0g : out STD_LOGIC;
+           led1g : out STD_LOGIC;
+           led2g : out STD_LOGIC;
+           led3g : out STD_LOGIC
            );
 end Sumador_FPGA;
 
@@ -55,6 +72,17 @@ component Sumador
             D : in STD_LOGIC;
             Suma : out STD_LOGIC_VECTOR(3 downto 0));
     END COMPONENT;
+    
+component Restador 
+    PORT (  
+            J : in STD_LOGIC;
+            K : in STD_LOGIC;
+            L : in STD_LOGIC;
+            M : in STD_LOGIC;
+            Diferencia : out STD_LOGIC_VECTOR(3 downto 0);
+            Signo: out STD_LOGIC);
+    END COMPONENT;
+    
     
 component Multiplicador 
     PORT (  
@@ -75,10 +103,16 @@ component Multiplicador
     signal F : STD_LOGIC := '0';
     signal G : STD_LOGIC := '0';
     signal H : STD_LOGIC := '0';
+    signal J : STD_LOGIC := '0';    
+    signal K : STD_LOGIC := '0';
+    signal L : STD_LOGIC := '0';
+    signal M : STD_LOGIC := '0';
  
     --Salidas
     signal Suma : STD_LOGIC_VECTOR(3 downto 0);
+    signal Diferencia : STD_LOGIC_VECTOR(3 downto 0);
     signal Producto : STD_LOGIC_VECTOR(3 downto 0);
+    signal Signo: STD_LOGIC;
     
 ----------------------------------------------------------   
 -- FPGA IMPLEMENTACION
@@ -97,6 +131,15 @@ begin
                 D => D,
                 Suma => Suma
     );
+    res_inst: Restador PORT MAP (
+                J=> J,
+                K => K,
+                L => L,
+                M => M,
+                Diferencia => Diferencia,
+                Signo => Signo
+    );
+            
             
             
 
@@ -109,11 +152,54 @@ begin
             G <= sw2;
             H <= sw3;
            
-            led0<= Producto(0);
-            led1<= Producto(1);
-            led2<= Producto(2); 
-            led3<= Producto(3);
+            led0r<= Producto(0);
+            led1r<= Producto(1);
+            led2r<= Producto(2); 
+            led3r<= Producto(3);
+            led0b<= Producto(0);
+            led1b<= Producto(1);
+            led2b<= Producto(2); 
+            led3b<= Producto(3);
+                led0g<= '0';
+                led1g<= '0';
+                led2g<= '0';
+                led3g<= '0';
        
+        elsif btn1='1' then 
+       
+       
+            J <= sw0;
+            K <= sw1;
+            L <= sw2;
+            M <= sw3;
+            
+            if Signo='1' then
+                led0r<= '0';
+                led1r<= '0';
+                led2r<= '0';
+                led3r<= '0';
+                led0b<= '0';
+                led1b<= '0';
+                led2b<= '0'; 
+                led3b<= '0';
+                led0g<= Diferencia(0);
+                led1g<= Diferencia(1);
+                led2g<= Diferencia(2); 
+                led3g<= Diferencia(3);
+            else 
+                led0r<= Diferencia(0);
+                led1r<= Diferencia(1);
+                led2r<= Diferencia(2); 
+                led3r<= Diferencia(3);
+                led0b<= Diferencia(0);
+                led1b<= Diferencia(1);
+                led2b<= Diferencia(2); 
+                led3b<= Diferencia(3);
+                led0g<= '0';
+                led1g<= '0';
+                led2g<= '0';
+                led3g<= '0';
+             end if;
             
         else 
                 
@@ -122,10 +208,19 @@ begin
             C <= sw2;
             D <= sw3;
            
-            led0<= Suma(0);
-            led1<= Suma(1);
-            led2<= Suma(2); 
-            led3<= Suma(3);
+            led0r<= Suma(0);
+            led1r<= Suma(1);
+            led2r<= Suma(2); 
+            led3r<= Suma(3);
+            led0b<= Suma(0);
+            led1b<= Suma(1);
+            led2b<= Suma(2); 
+            led3b<= Suma(3);
+                led0g<= '0';
+                led1g<= '0';
+                led2g<= '0';
+                led3g<= '0';
+       
        
         end if;
     end process;

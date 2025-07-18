@@ -1,6 +1,6 @@
 -------------------------------------
 | Tool Version : Vivado v.2024.2
-| Date         : Wed Jul 16 11:23:33 2025
+| Date         : Fri Jul 18 10:08:18 2025
 | Host         : daniel-NBLB-WAX9N
 | Design       : design_1
 | Device       : xc7a100t-csg324-1--

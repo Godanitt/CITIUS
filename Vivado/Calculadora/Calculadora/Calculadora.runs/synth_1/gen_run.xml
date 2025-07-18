@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1752657745" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/Sumador_FPGA.dcp">
+<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1752826025" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/Sumador_FPGA.dcp">
   <File Type="VDS-TIMINGSUMMARY" Name="Sumador_FPGA_timing_summary_synth.rpt"/>
   <File Type="RDS-DCP" Name="Sumador_FPGA.dcp"/>
   <File Type="RDS-UTIL-PB" Name="Sumador_FPGA_utilization_synth.pb"/>
@@ -12,6 +12,12 @@
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/new/Multiplicador.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/Restador.vhd">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
