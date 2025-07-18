@@ -7,19 +7,6 @@ Este repositorio contiene los ejercicios, códigos fuente y recursos de mis prá
 
 ```
 CITIUS
-├── Apuntes
-|    ├── Apuntes.tex
-|    ├── Template.cls
-|    ├── Bibliografia.bib
-|    ├── Cuerpo 
-|    |     ├── 01-FPGA.tex
-|    |     ├── 02-TecnologiaVLSI.tex
-|    |     ├── 03-FPGA.tex
-|    |     ├── 04-VHDL.tex
-|    |     ├── 05-Vivado.tex
-|    |     └── 
-|    ├── Imagenes
-|    └── Plots 
 |
 ├── LTspice
 |    ├── Nmos
