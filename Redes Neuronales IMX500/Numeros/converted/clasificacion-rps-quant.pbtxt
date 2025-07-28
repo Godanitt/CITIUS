@@ -1,0 +1,278 @@
+name: "Sony"
+layer {
+  name: "Placeholder: input_1"
+  type: "Placeholder"
+  
+  top: "input_1:0"
+    scale_param {
+    "InputShapes": ""
+    "OutputShape": "28x28x1"
+    "Quantize[mn,mx]": [0, 1.0]
+    "QuantizeBits": 8
+    
+    "RuntimeMemory": "4,88KB"
+    "ScheduleId": "6"
+
+  }
+
+}
+layer {
+  name: "Conv2D: keras_quantization_wrapper_3"
+  type: "Convolution"
+  bottom: "input_1:0"
+  top: "conv2d_post_activation:0"
+    scale_param {
+    "InputShapes": "28x28x1, 3x3x1x32, 32"
+    "OutputShape": "26x26x32"
+    "Quantize[mn,mx]": [0, 1.0]
+    "QuantizeBits": 16
+    "ConstInputs": "keras_quantization_wrapper_3_kernel:0"
+    "ConstInputs": "keras_quantization_wrapper_3_bias:0"
+    "RuntimeMemory": "21,13KB"
+    "ScheduleId": "7"
+
+  }
+  blobs {
+    shape {
+      dim: 3
+      dim: 3
+      dim: 1
+      dim: 32
+    }
+  }
+  blobs {
+    shape {
+      dim: 32
+    }
+  }
+}
+layer {
+  name: "Relu: conv2d_post_activation"
+  type: "Relu"
+  bottom: "conv2d_post_activation:0"
+  top: "conv2d_post_activation:0"
+    scale_param {
+    "InputShapes": "26x26x32"
+    "OutputShape": "26x26x32"
+    "Quantize[mn,mx]": [0, 1.0]
+    "QuantizeBits": 8
+    "ConstInputs": "keras_quantization_wrapper_3_kernel:0"
+    "ConstInputs": "keras_quantization_wrapper_3_bias:0"
+    "RuntimeMemory": "21,13KB"
+    
+  }
+
+}
+layer {
+  name: "MaxPool: max_pooling2d"
+  type: "MaxPool"
+  bottom: "conv2d_post_activation:0"
+  top: "max_pooling2d:0"
+    scale_param {
+    "InputShapes": "26x26x32"
+    "OutputShape": "13x13x32"
+    "Quantize[mn,mx]": [0, 1.0]
+    "QuantizeBits": 8
+    
+    "RuntimeMemory": "5,28KB"
+    "ScheduleId": "8"
+
+  }
+
+}
+layer {
+  name: "Conv2D: keras_quantization_wrapper_4"
+  type: "Convolution"
+  bottom: "max_pooling2d:0"
+  top: "conv2d_1_post_activation:0"
+    scale_param {
+    "InputShapes": "13x13x32, 3x3x32x64, 64"
+    "OutputShape": "11x11x64"
+    "Quantize[mn,mx]": [0, 4.0]
+    "QuantizeBits": 16
+    "ConstInputs": "keras_quantization_wrapper_4_kernel:0"
+    "ConstInputs": "keras_quantization_wrapper_4_bias:0"
+    "RuntimeMemory": "7,56KB"
+    "ScheduleId": "9"
+
+  }
+  blobs {
+    shape {
+      dim: 3
+      dim: 3
+      dim: 32
+      dim: 64
+    }
+  }
+  blobs {
+    shape {
+      dim: 64
+    }
+  }
+}
+layer {
+  name: "Relu: conv2d_1_post_activation"
+  type: "Relu"
+  bottom: "conv2d_1_post_activation:0"
+  top: "conv2d_1_post_activation:0"
+    scale_param {
+    "InputShapes": "11x11x64"
+    "OutputShape": "11x11x64"
+    "Quantize[mn,mx]": [0, 4.0]
+    "QuantizeBits": 8
+    "ConstInputs": "keras_quantization_wrapper_4_kernel:0"
+    "ConstInputs": "keras_quantization_wrapper_4_bias:0"
+    "RuntimeMemory": "7,56KB"
+    
+  }
+
+}
+layer {
+  name: "MaxPool: max_pooling2d_1"
+  type: "MaxPool"
+  bottom: "conv2d_1_post_activation:0"
+  top: "max_pooling2d_1:0"
+    scale_param {
+    "InputShapes": "11x11x64"
+    "OutputShape": "5x5x64"
+    "Quantize[mn,mx]": [0, 4.0]
+    "QuantizeBits": 8
+    
+    "RuntimeMemory": "1,56KB"
+    "ScheduleId": "10"
+
+  }
+
+}
+layer {
+  name: "Transform: transform-1-max_pooling2d_1"
+  type: "Transform"
+  bottom: "max_pooling2d_1:0"
+  top: "transform-1-max_pooling2d_1:0"
+    scale_param {
+    "InputShapes": "5x5x64"
+    "OutputShape": "5x5x64"
+    "Quantize[mn,mx]": [0, 4.0]
+    "QuantizeBits": 8
+    
+    "RuntimeMemory": "1,56KB"
+    "ScheduleId": "11"
+
+  }
+
+}
+layer {
+  name: "Reshape: flatten"
+  type: "Reshape"
+  bottom: "transform-1-max_pooling2d_1:0"
+  top: "flatten:0"
+    scale_param {
+    "InputShapes": "5x5x64"
+    "OutputShape": "1600"
+    "Quantize[mn,mx]": [0, 4.0]
+    "QuantizeBits": 8
+    "HasScratch": "true"
+    
+    "RuntimeMemory": "1,56KB"
+    "ScheduleId": "12"
+
+  }
+
+}
+layer {
+  name: "MatMulBias: keras_quantization_wrapper_5"
+  type: "MatMulBias"
+  bottom: "flatten:0"
+  top: "keras_quantization_wrapper_5:0"
+    scale_param {
+    "InputShapes": "1600, 1600x10, 10"
+    "OutputShape": "10"
+    "Quantize[mn,mx]": [-32.0, 32.0]
+    "QuantizeBits": 8
+    "ConstInputs": "keras_quantization_wrapper_5_kernel:0"
+    "ConstInputs": "keras_quantization_wrapper_5_bias:0"
+    "RuntimeMemory": "32B"
+    "ScheduleId": "13"
+
+  }
+  blobs {
+    shape {
+      dim: 1600
+      dim: 10
+    }
+  }
+  blobs {
+    shape {
+      dim: 10
+    }
+  }
+}
+layer {
+  name: "Softmax: dense_post_activation"
+  type: "Softmax"
+  bottom: "keras_quantization_wrapper_5:0"
+  top: "dense_post_activation:0"
+    scale_param {
+    "InputShapes": "10"
+    "OutputShape": "10"
+    "Quantize[mn,mx]": [0, 1.0]
+    "QuantizeBits": 8
+    
+    "RuntimeMemory": "32B"
+    "ScheduleId": "14"
+
+  }
+
+}
+layer {
+  name: "Transform: transform-0-dense_post_activation"
+  type: "Transform"
+  bottom: "dense_post_activation:0"
+  top: "transform-0-dense_post_activation:0"
+    scale_param {
+    "InputShapes": "10"
+    "OutputShape": "10"
+    "Quantize[mn,mx]": [0, 1.0]
+    "QuantizeBits": 8
+    
+    "RuntimeMemory": "32B"
+    "ScheduleId": "15"
+
+  }
+
+}
+layer {
+  name: "Output: Output0"
+  type: "Output"
+  bottom: "transform-0-dense_post_activation:0"
+  
+    scale_param {
+    "InputShapes": "10"
+    
+    
+    
+    "RuntimeMemory": "0B"
+    "ScheduleId": "16"
+
+  }
+
+}
+layer{
+  name: "clasificacion-rps-quant"
+  type: "MemoryReport"
+  scale_param {
+   
+    RuntimeMemoryPhysicalSize: "33,00KB"
+    ModelMemoryPhysicalSize: "78,84KB"
+    ReservedMemory: "1,00KB"
+    MemoryUsage: "112,84KB"
+    TotalMemoryAvailableOnChip: "8,00MB"
+    MemoryUtilization: "2%"
+    FitInChip: "true"
+    InputPersistent: "true"
+    Hash: "clasificacion-rps-quant"
+    InputPersistenceCost: "4,88KB"
+      
+   LargestLayer: "(F)keras_quantization_wrapper_3"
+  }
+}

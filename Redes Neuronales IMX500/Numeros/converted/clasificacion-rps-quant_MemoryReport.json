@@ -1,0 +1,22 @@
+{
+  "Memory Report": {
+    "Name": "clasificacion-rps-quant",
+    "Runtime Memory Physical Size": "33,00KB",
+    "Model Memory Physical Size": "78,84KB",
+    "Reserved Memory": "1,00KB",
+    "Memory Usage": "112,84KB",
+    "Total Memory Available On Chip": "8,00MB",
+    "Memory Utilization": "2%",
+    "Fit In Chip": true,
+    "Input Persistent": true,
+    "Networks": [
+      {
+        "Hash": "clasificacion-rps-quant",
+        "Name": "clasificacion-rps-quant",
+        "Runtime Memory Physical Size": "33,00KB",
+        "Model Memory Physical Size": "78,84KB",
+        "Input Persistence Cost": "4,88KB"
+      }
+    ]
+  }
+}
