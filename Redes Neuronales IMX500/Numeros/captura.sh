@@ -3,8 +3,8 @@
 # para ejecutar directamente llamar a bash capturar.sh
 # tiene un argumento (temporal)
 
-INPUT_PATH="Imagenes/raw/Test.jpg"
-OUTPUT_PATH="Imagenes/prediccion/Test.jpg"
+INPUT_PATH="Imagenes/raw/TestRaw.jpg"
+OUTPUT_PATH="Imagenes/prediccion/TestPredicted.jpg"
 
 # Captura una imagen (ejemplo usando ffmpeg)
 
