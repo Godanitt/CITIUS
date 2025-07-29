@@ -110,5 +110,6 @@
   ],
 
   "latex-workshop.latex.autoBuild.run": "never",
-  "latex-workshop.latex.recipe.default": "lualatex -> biber -> lualatex*2 + move pdf"
+  "latex-workshop.latex.recipe.default": "lualatex -> biber -> lualatex*2 + move pdf",
+  "python-envs.pythonProjects": []
 }

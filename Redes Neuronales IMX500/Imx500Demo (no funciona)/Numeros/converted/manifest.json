@@ -1,0 +1,64 @@
+{
+  "Release Version": "3.16.1",
+  "Description": "Created by Packer",
+  "Target": "IMX500",
+  "Network ID": "clasificacion-rps-quant",
+  "Network Name": "clasificacion-rps-quant",
+  "Date Info": "Mon Jul 28 11:47:50 CEST 2025",
+  "SdspA": {
+    "LoadAddr": "0x5040000",
+    "File": "sdpsA.bin",
+    "md5": "B0B44F15B5A2E3DE0F061321507A8BF7",
+    "Version": "3.16.1",
+    "Size": 52928
+  },
+  "SdspC": {
+    "LoadAddr": "0x6080000",
+    "File": "sdpsC.bin",
+    "md5": "B0518AB675DF29779D475A5F03B11E45",
+    "Version": "3.16.1",
+    "Size": 6528
+  },
+  "CfgBank1": {
+    "LoadAddr": "0x5000000",
+    "File": "cfgA.bin",
+    "md5": "2C48B6D5A4067BF436C2CE53CB33BE7A",
+    "Version": "3.16.1",
+    "Size": 7296
+  },
+  "CfgBank2": {
+    "LoadAddr": "0x6000000",
+    "File": "cfgC.bin",
+    "md5": "3AEC96904612449242CA6C30680E4CDA",
+    "Version": "3.16.1",
+    "Size": 4
+  },
+  "xmlSchema": {
+    "LoadAddr": "NA",
+    "File": "dnnParams.xsd",
+    "md5": "F8AAC1CFE40FDED8CCE5813D9815BBEA",
+    "Version": "3.16.1",
+    "Size": 5089
+  },
+  "xml": {
+    "LoadAddr": "NA",
+    "File": "dnnParams.xml",
+    "md5": "596A9C02BCC2DA7A6703D54510E97499",
+    "Version": "3.16.1",
+    "Size": 1370
+  },
+  "coef": {
+    "LoadAddr": "0x47ec400",
+    "File": "l2staticData.bin",
+    "md5": "1B143AE51ECA0212DAEDF1329CB72B1C",
+    "Version": "3.16.1",
+    "Size": 80736
+  },
+  "Versions": {
+    "LoadAddr": "0x0000E000",
+    "File": "verTable.txt",
+    "md5": "1B9535E74E33C692DBBAF990DECEBC30",
+    "Version": "3.16.1",
+    "Size": 577
+  }
+}
