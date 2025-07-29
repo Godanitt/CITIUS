@@ -39,7 +39,7 @@ cv2.imshow("Resultado", imagen_color)
 cv2.waitKey(10)  # infinitos segundos
 
 # Guardar la imagen con el output
-#cv2.imwrite(imagen_path_out, imagen_color)
+cv2.imwrite(imagen_path_out, imagen_color)
 #print(f"Imagen procesada guardada en: {imagen_path_out}")
 
 

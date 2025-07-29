@@ -9,7 +9,7 @@ OUTPUT_PATH="Imagenes/prediccion/Test.jpg"
 # Captura una imagen (ejemplo usando ffmpeg)
 
 
-rpicam-hello --timeout 10 &
+rpicam-hello --preview 10 &
 
 for i in {1..10}  # Si quieres que sea infinito → while true; do
 do
