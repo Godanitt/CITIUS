@@ -8,6 +8,9 @@ OUTPUT_PATH="Imagenes/prediccion/Test.jpg"
 
 # Captura una imagen (ejemplo usando ffmpeg)
 
+rm Imagenes/prediccion/*.jpg
+rm Imagenes/raw/*.jpg
+
 
 rpicam-hello --preview 10 &
 
@@ -30,5 +33,3 @@ echo "Proceso Terminado"
 
 
 # Si quiero eliminar las imagenes: 
-rm Imagenes/prediccion/*.jpg
-rm Imagenes/raw/*.jpg
