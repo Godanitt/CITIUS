@@ -34,7 +34,7 @@ clase = np.argmax(prediccion)
 # Mostrar imagen con resultado
 imagen_color = cv2.cvtColor(imagen, cv2.COLOR_GRAY2BGR)
 cv2.putText(imagen_color, str(clase), (10, 30),
-            cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
+            cv2.FONT_HERSHEY_SIMPLEX, 3, (0, 255, 0), 5)
 cv2.imshow("Resultado", imagen_color)
 cv2.waitKey(2000)  # infinitos segundos
 
