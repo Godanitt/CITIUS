@@ -11,7 +11,7 @@ OUTPUT_PATH="Imagenes/prediccion/Test.jpg"
 
 rpicam-hello --preview 10 &
 
-for i in {1..10}  # Si quieres que sea infinito → while true; do
+for i in {1}  # Si quieres que sea infinito → while true; do
 do
     # Captura imagen (bloqueante hasta guardar)
     rpicam-still --output "$INPUT_PATH"
@@ -30,4 +30,5 @@ echo "Proceso Terminado"
 
 
 # Si quiero eliminar las imagenes: 
-# rm Imagenes/prediccion/*.jpg
+rm Imagenes/prediccion/*.jpg
+rm Imagenes/raw/*.jpg
