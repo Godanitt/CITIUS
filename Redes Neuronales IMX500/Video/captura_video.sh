@@ -13,7 +13,7 @@ rm Imagenes/raw/*.mp4
 
 
 rpicam-hello --roi 0.45,0.45,0.55,0.55 --preview 7
-rpicam-vid  -t 10s -o test.mp4 
+rpicam-vid d--roi 0.45,0.45,0.55,0.55  -t 10s -o test.mp4 
 
 
 python3 clasificacion_video.py "$INPUT_PATH" "$OUTPUT_PATH"
