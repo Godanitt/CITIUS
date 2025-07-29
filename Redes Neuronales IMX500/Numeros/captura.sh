@@ -12,18 +12,18 @@ rm Imagenes/prediccion/*.jpg
 rm Imagenes/raw/*.jpg
 
 
-rpicam-hello --roi 0.25,0.25,0.75,0.75 --preview 7
+rpicam-hello --roi 0.35,0.35,0.65,0.65 --preview 7
 
 for i in {1}  # Si quieres que sea infinito → while true; do
 do
     # Captura imagen (bloqueante hasta guardar)
-    rpicam-still --roi 0.25,0.25,0.75,0.75 --output "$INPUT_PATH"
+    rpicam-still --roi 0.35,0.35,0.65,0.75 --output "$INPUT_PATH"
     
     # Procesa la imagen capturada
     python3 clasificacion_imagen.py "$INPUT_PATH" "$OUTPUT_PATH"
     
     # Espera 1 segundo
-    sleep 10
+    sleep 2
 done
 
 # Esperamos a que termine

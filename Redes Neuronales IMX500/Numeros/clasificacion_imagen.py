@@ -36,7 +36,7 @@ imagen_color = cv2.cvtColor(imagen, cv2.COLOR_GRAY2BGR)
 cv2.putText(imagen_color, str(clase), (10, 30),
             cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
 cv2.imshow("Resultado", imagen_color)
-cv2.waitKey(10000)  # infinitos segundos
+cv2.waitKey(2000)  # infinitos segundos
 
 # Guardar la imagen con el output
 cv2.imwrite(imagen_path_out, imagen_color)
